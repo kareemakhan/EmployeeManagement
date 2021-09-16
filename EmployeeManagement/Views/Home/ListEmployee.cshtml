@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Employee List";
+}
+@model IEnumerable<EmployeeManagement.Models.Employee>
+@{
+    ViewBag.Title = "Employee List";
+    ViewData["ShowButtons"] = true;
+}
+
+
+<div class="container">
+    <div class="card-group">
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2">
+            @foreach (var employee in Model)
+            {
+                <partial name="_DisplayEmployee" model="employee" view-data="ViewData"/>
+            }
+        </div>
+    </div>
+</div>
+

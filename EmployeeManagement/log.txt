@@ -1,0 +1,5 @@
+ This is a warning from index
+ This is a warning from index
+ The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at EmployeeManagement.Controllers.HomeController.Index() in C:\Users\KarimaKhan\source\repos\EmployeeManagement\EmployeeManagement\Controllers\HomeController.cs:line 36

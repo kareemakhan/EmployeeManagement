@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Secure Page";
+}
+<h1>@ViewData["Title"]</h1>
+<h3>You have entered a Top Secret Page</h3>
+<h2>Welcome</h2>
+
+<ul>
+    @foreach(var c in User.Claims)
+     {
+        <li>@c.Type : @c.Value.</li>
+     }
+</ul>
+
+

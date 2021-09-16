@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Employees</title>
+    <script src="lib/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var ulEmployees = $('#ulEmployees');
+            $('#btn').click(function () {
+                fetch("https://localhost:44390/api/employee")
+                    .then(res => {
+                        return res.json();
+                    })
+                    .then(data => console.log(data))
+                    .then(error => console.log(error));
+            });
+            
+        });
+    </script>
+</head>
+<body>
+   
+    <input type="button" id="btn" value="Get All Employees" />
+    
+    <ul id="ulEmployees"></ul>
+</body>
+</html>

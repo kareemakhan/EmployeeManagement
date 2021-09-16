@@ -1,0 +1,22 @@
+﻿
+@model EmployeeManagement.Models.Employee
+ @{
+     var photoPath = "~/images/" + (Model.PhotoPath ?? "userlogo.png");
+     var showButton = (bool)ViewData["ShowButtons"];
+ }
+<div class="col">
+    <div class="card m-3">
+        <div class="card-body text-center">
+            <img src=@photoPath class="card-img-top" asp-append-version="true" style="width: 200px; height: 200px;" />
+            <h3 class="m-3">@Model.Name</h3>
+        </div>
+        @if (showButton)
+        {
+        <div class="card-footer text-center">
+            <a asp-controller="home" asp-action="details" asp-route-id="@Model.Id" class="btn m-1">View</a>
+            <a asp-controller="home" asp-action="editemployee" asp-route-id="@Model.Id" class="btn m-1">Edit</a>
+            <a asp-controller="home" asp-action="deleteemployee" asp-route-id="@Model.Id" class="btn btn-outline-danger m-1" style:"text-size-adjust">Delete</a>
+        </div>
+        }
+    </div>
+</div>
